@@ -1,0 +1,42 @@
+import Link from "next/link";
+import { IoArrowForward } from "react-icons/io5";
+
+const CTASection = () => {
+  return (
+    <section className="w-full bg-[#3F0909] text-white">
+      <div className="mx-auto max-w-5xl px-4 py-16 text-center md:px-6 md:py-20 lg:py-24">
+        <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+          Ready to Organize Your Organization?
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-neutral-300 sm:text-base md:text-lg">
+          Try DAM.ng today and transform how your teams work. Start with our
+          free plan or book a personalized demo.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            href="/get-started"
+            className="flex items-center justify-center border-2 border-white gap-2 bg-white px-6 py-3 text-sm font-semibold text-[#3F0909] transition hover:bg-[#3F0909] hover:text-white sm:px-8 sm:py-3.5 sm:text-base"
+          >
+            Get Started Free
+            <IoArrowForward />
+          </Link>
+
+          <Link
+            href="/contact"
+            className="flex items-center justify-center border-2 border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#3F0909] sm:px-8 sm:py-3.5 sm:text-base"
+          >
+            Contact Us
+          </Link>
+        </div>
+
+        <p className="mt-8 text-xs text-neutral-400 sm:text-sm">
+          Free 14-day trial • Cancel anytime
+        </p>
+      </div>
+    </section>
+  );
+};
+
+export default CTASection;
