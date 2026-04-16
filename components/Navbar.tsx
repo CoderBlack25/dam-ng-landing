@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full bg-white text-[#4B4B4B]">
+    <header className="fixed z-100 w-full bg-white text-[#4B4B4B]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6 lg:px-8">
         <Link href="/">
           <Image
