@@ -7,7 +7,7 @@ import { HiArrowRight } from "react-icons/hi";
 const HeroSection = () => {
   return (
     <section className="w-full bg-linear-to-r from-white via-[#fceded] to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center px-6 py-12 md:py-24 lg:py-50">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center px-6 py-24 md:py-40 lg:py-50">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[#3F0909] leading-[1.1] tracking-tight">
             Work Smart.
