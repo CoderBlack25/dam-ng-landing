@@ -16,7 +16,9 @@ const CTASection = () => {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/get-started"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://dam-ng-client.vercel.app"
             className="flex items-center justify-center border-2 border-white gap-2 bg-white px-6 py-3 text-sm font-semibold text-[#3F0909] transition hover:bg-[#3F0909] hover:text-white sm:px-8 sm:py-3.5 sm:text-base"
           >
             Get Started Free
@@ -24,7 +26,7 @@ const CTASection = () => {
           </Link>
 
           <Link
-            href="/contact"
+            href="mailto:support@damng.com"
             className="flex items-center justify-center border-2 border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#3F0909] sm:px-8 sm:py-3.5 sm:text-base"
           >
             Contact Us
