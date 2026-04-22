@@ -13,13 +13,13 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "About", href: "#about" },
     { name: "Pricing", href: "#pricing" },
-    { name: "FAQs", href: "/faqs" },
+    { name: "FAQs", href: "#faqs" },
     { name: "Policies", href: "/policies" },
   ];
 
   return (
-    <header className="fixed z-100 w-full bg-white text-[#4B4B4B]">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6 lg:px-8">
+    <header className="fixed z-100 w-full bg-white text-(--color-text-gray)">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-14 py-4">
         <Link href="/">
           <Image
             src={logo}
@@ -44,15 +44,15 @@ const Navbar = () => {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="/login"
-            className="text-[#4C4B4B] font-medium transition hover:text-gray-900"
+            href="#"
+            className="text-(--color-text-gray) font-medium transition hover:text-gray-900"
           >
             Log In
           </Link>
 
           <Link
-            href="/get-started"
-            className="bg-[#550E0E] px-4 py-2 font-medium text-white transition hover:bg-[#370606]"
+            href="#"
+            className="bg-(--color-primary-medium) px-4 py-2 font-medium text-white transition hover:bg-(--color-primary-hover)"
           >
             Get Started
           </Link>
@@ -83,15 +83,15 @@ const Navbar = () => {
 
             <div className="mt-4 flex flex-col gap-3">
               <Link
-                href="/login"
-                className="text-sm text-[#4C4B4B] font-medium text-center transition hover:text-gray-900"
+                href="#"
+                className="text-sm text-(--color-text-gray) font-medium text-center transition hover:text-gray-900"
               >
                 Log In
               </Link>
 
               <Link
-                href="/get-started"
-                className="bg-[#550E0E] px-4 py-2 text-center text-sm font-medium text-white transition hover:bg-[#370606]"
+                href="#"
+                className="bg-(--color-primary-medium) px-4 py-2 text-center text-sm font-medium text-white transition hover:bg-(--color-primary-hover)"
               >
                 Get Started
               </Link>

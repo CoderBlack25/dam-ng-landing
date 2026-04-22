@@ -5,6 +5,7 @@ import HowDamNgWorks from "@/components/HowDamNgWorks";
 import FeatureHighlights from "@/components/FeatureHighlights";
 import BuiltForTeams from "@/components/BuiltForTeams";
 import PricingSection from "@/components/PricingSection";
+import FAQSection from "@/components/FAQsection";
 import CTASection from "@/components/CTASection";
 
 const page = () => {
@@ -17,6 +18,7 @@ const page = () => {
       <FeatureHighlights />
       <BuiltForTeams />
       <PricingSection />
+      <FAQSection />
       <CTASection />
     </main>
   );

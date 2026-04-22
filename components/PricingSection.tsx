@@ -5,8 +5,11 @@ import { IoCheckmark } from "react-icons/io5";
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="w-full bg-[#FAF8F7] text-[#3F0909]">
-      <div className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20 lg:py-28">
+    <section
+      id="pricing"
+      className="w-full bg-(--color-bg-cream) text-primary scroll-mt-10"
+    >
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-20 md:py-28">
         <div className="text-center">
           <h2 className="text-3xl font-bold sm:text-4xl md:text-[40px]">
             Simple, Transparent Pricing
@@ -16,18 +19,15 @@ const PricingSection = () => {
           </p>
         </div>
 
-        {/* Cards */}
         <div className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
-          {/* Enterprise */}
-          <div className="relative flex flex-col justify-between border-2 border-[#3F0909] p-6 sm:p-8">
-            {/* Badge */}
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#3F0909] font-medium px-4 py-1 text-xs text-white">
+          <div className="relative flex flex-col justify-between border-2 border-primary p-6 sm:p-8">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary font-medium px-4 py-1 text-xs text-white">
               Most Popular
             </span>
 
             <div>
               <h3 className="text-2xl font-bold">Enterprise</h3>
-              <p className="mt-1 text-sm text-[#828181]">
+              <p className="mt-1 text-sm text-(--color-text-lighter)">
                 Tailored support + custom integrations
               </p>
 
@@ -47,7 +47,7 @@ const PricingSection = () => {
                     key={index}
                     className="flex items-start gap-2 text-sm text-[#4C4B4B]"
                   >
-                    <IoCheckmark className="mt-1 text-[#3F0909]" />
+                    <IoCheckmark className="mt-1 text-primary" />
                     {item}
                   </li>
                 ))}
@@ -56,22 +56,22 @@ const PricingSection = () => {
 
             <Link
               href="/subscribe"
-              className="mt-8 self-center inline-flex items-center justify-center border-2 border-[#3F0909] px-10 py-3 text-sm text-[#3F0909] font-medium transition hover:bg-[#3F0909] hover:text-white"
+              className="mt-8 self-center inline-flex items-center justify-center border-2 border-primary px-10 py-3 text-sm text-primary font-medium transition hover:bg-primary hover:text-white"
             >
               Subscribe
             </Link>
           </div>
 
-          <div className="flex flex-col justify-between border-2 border-[#3F0909] p-6 sm:p-8">
+          <div className="flex flex-col justify-between border-2 border-primary p-6 sm:p-8">
             <div>
               <h3 className="text-2xl font-bold">Free</h3>
-              <p className="mt-1 text-sm text-[#828181]">
+              <p className="mt-1 text-sm text-(--color-text-lighter)">
                 For individuals and small teams starting out
               </p>
 
               <p className="mt-6 text-4xl font-bold">
                 NO{" "}
-                <span className="block text-sm font-normal text-[#828181]">
+                <span className="block text-sm font-normal text-(--color-text-lighter)">
                   per month
                 </span>
               </p>
@@ -86,9 +86,9 @@ const PricingSection = () => {
                 ].map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-2 text-sm text-[#4C4B4B]"
+                    className="flex items-start gap-2 text-sm text-(--color-text-gray)"
                   >
-                    <IoCheckmark className="mt-1 text-[#3F0909]" />
+                    <IoCheckmark className="mt-1 text-primary" />
                     {item}
                   </li>
                 ))}
@@ -97,7 +97,7 @@ const PricingSection = () => {
 
             <Link
               href="/get-started"
-              className="mt-8 self-center inline-flex items-center justify-center border-2 border-[#3F0909] px-10 py-3 text-sm text-[#3F0909] font-medium transition hover:bg-[#3F0909] hover:text-white"
+              className="mt-8 self-center inline-flex items-center justify-center border-2 border-primary px-10 py-3 text-sm text-primary font-medium transition hover:bg-primary hover:text-white"
             >
               Get started
             </Link>

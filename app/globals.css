@@ -3,6 +3,44 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand/Primary Colors */
+  --color-primary-dark: #3f0909;
+  --color-primary-darker: #2d0909;
+  --color-primary-hover: #370606;
+  --color-primary-medium: #550e0e;
+  --color-primary-light: #841919;
+  --color-accent-burgundy: #7a2e2e;
+  --color-accent-maroon: #822c35;
+
+  /* Text/Foreground Colors */
+  --color-text-dark: #2b2b2b;
+  --color-text-semi-dark: #272626;
+  --color-text-gray: #4b4b4b;
+  --color-text-muted: #4a5565;
+  --color-text-secondary: #364153;
+  --color-text-light: #6a7282;
+  --color-text-lighter: #828181;
+
+  /* Background/Neutral Colors */
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f9fafb;
+  --color-bg-lighter: #f8f2f2;
+  --color-bg-pink: #fceded;
+  --color-bg-cream: #faf8f7;
+  --color-bg-very-light: #fef2f2;
+
+  /* Border Colors */
+  --color-border: #eaeaea;
+  --color-border-light: #f2e8e8;
+  --color-border-light-2: #d5b6b6;
+  --color-border-gray: #e6d5d5;
+  --color-border-neutral: #e6e6e6;
+
+  /* Icon/Component Colors */
+  --color-icon-dark: #4a1d24;
+  --color-footer-hover: #320303;
+  --color-error: #dc2626;
 }
 
 @theme inline {
@@ -12,6 +50,12 @@
   --font-mono: var(--font-geist-mono);
   --font-lora: var(--font-lora);
   --font-inter: var(--font-inter);
+
+  /* Brand Color Theme */
+  --color-primary: var(--color-primary-dark);
+  --color-accent: var(--color-accent-burgundy);
+  --color-text: var(--color-text-dark);
+  --color-border: var(--color-border);
 }
 
 @media (prefers-color-scheme: dark) {

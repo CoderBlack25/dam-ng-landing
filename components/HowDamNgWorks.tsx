@@ -1,4 +1,3 @@
-import React from "react";
 import { FiSearch, FiUsers } from "react-icons/fi";
 import { HiOutlineDocumentCheck } from "react-icons/hi2";
 import { LuFolderKanban } from "react-icons/lu";
@@ -36,13 +35,13 @@ const stepsData = [
 
 export default function HowDamNgWorks() {
   return (
-    <div className="bg-white text-[#3F0909]">
-      <div className="container mx-auto max-w-7xl px-6 py-20 md:py-32">
+    <div className="bg-white text-primary">
+      <div className="container mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-20 md:py-28">
         <div className="text-center mb-20 md:mb-28 max-w-lg mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-[40px] font-bold mb-6 tracking-tight">
             How DAM.ng Works
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-[#4C4B4B] leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-(--color-text-gray) leading-relaxed">
             Four simple steps to transform how your organization manages
             documents and workflows
           </p>
@@ -57,11 +56,11 @@ export default function HowDamNgWorks() {
                 className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8"
               >
                 <div className="relative shrink-0">
-                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#F2E8E8] border-2 border-white flex items-center justify-center z-10 shadow-sm">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-(--color-border-light) border-2 border-white flex items-center justify-center z-10 shadow-sm">
                     <span className="text-xs font-bold">{step.number}</span>
                   </div>
 
-                  <div className="w-16 h-16 bg-[linear-gradient(to_bottom,#3F0909,#841919)] rounded flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 bg-[linear-gradient(to_bottom,var(--color-primary-dark),var(--color-primary-light))] rounded flex items-center justify-center shadow-lg">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -70,7 +69,7 @@ export default function HowDamNgWorks() {
                   <h2 className="text-xl md:text-[22px] font-bold mb-2 md:mb-3">
                     {step.title}
                   </h2>
-                  <p className="text-sm md:text-base leading-relaxed text-[#4C4B4B]">
+                  <p className="text-sm md:text-base leading-relaxed text-(--color-text-gray)">
                     {step.description}
                   </p>
                 </div>
