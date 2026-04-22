@@ -1,7 +1,18 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { IoCheckmark } from "react-icons/io5";
+
+import {
+  sectionFade,
+  cardContainer,
+  cardVariants,
+  cardHover,
+  listContainer,
+  listItem,
+  //pricingHighlight,
+} from "@/lib/animations/Animations";
 
 const PricingSection = () => {
   return (
@@ -10,17 +21,34 @@ const PricingSection = () => {
       className="w-full bg-(--color-bg-cream) text-primary scroll-mt-10"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-20 md:py-28">
-        <div className="text-center">
+        <motion.div
+          variants={sectionFade}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="text-center"
+        >
           <h2 className="text-3xl font-bold sm:text-4xl md:text-[40px]">
             Simple, Transparent Pricing
           </h2>
           <p className="mt-3 text-sm text-neutral-600 sm:text-base md:text-lg">
             Choose the plan that fits your organization&apos;s needs
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
-          <div className="relative flex flex-col justify-between border-2 border-primary p-6 sm:p-8">
+        <motion.div
+          variants={cardContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8"
+        >
+          <motion.div
+            variants={cardVariants}
+            {...cardHover}
+            // {...pricingHighlight}
+            className="relative flex flex-col justify-between border-2 border-primary p-6 sm:p-8"
+          >
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary font-medium px-4 py-1 text-xs text-white">
               Most Popular
             </span>
@@ -33,7 +61,10 @@ const PricingSection = () => {
 
               <p className="mt-6 text-4xl font-bold">Custom</p>
 
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              <motion.ul
+                variants={listContainer}
+                className="mt-6 grid gap-3 sm:grid-cols-2"
+              >
                 {[
                   "Unlimited team members",
                   "Unlimited storage",
@@ -43,15 +74,16 @@ const PricingSection = () => {
                   "24/7 phone support",
                   "SLA guarantee",
                 ].map((item, index) => (
-                  <li
+                  <motion.li
                     key={index}
+                    variants={listItem}
                     className="flex items-start gap-2 text-sm text-[#4C4B4B]"
                   >
                     <IoCheckmark className="mt-1 text-primary" />
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
 
             <Link
@@ -60,9 +92,13 @@ const PricingSection = () => {
             >
               Subscribe
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col justify-between border-2 border-primary p-6 sm:p-8">
+          <motion.div
+            variants={cardVariants}
+            {...cardHover}
+            className="flex flex-col justify-between border-2 border-primary p-6 sm:p-8"
+          >
             <div>
               <h3 className="text-2xl font-bold">Free</h3>
               <p className="mt-1 text-sm text-(--color-text-lighter)">
@@ -76,7 +112,10 @@ const PricingSection = () => {
                 </span>
               </p>
 
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              <motion.ul
+                variants={listContainer}
+                className="mt-6 grid gap-3 sm:grid-cols-2"
+              >
                 {[
                   "Up to 5 team members",
                   "Basic document management",
@@ -84,15 +123,16 @@ const PricingSection = () => {
                   "Mobile & web access",
                   "Community support",
                 ].map((item, index) => (
-                  <li
+                  <motion.li
                     key={index}
+                    variants={listItem}
                     className="flex items-start gap-2 text-sm text-(--color-text-gray)"
                   >
                     <IoCheckmark className="mt-1 text-primary" />
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
 
             <Link
@@ -101,8 +141,8 @@ const PricingSection = () => {
             >
               Get started
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

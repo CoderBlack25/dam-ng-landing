@@ -4,6 +4,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronDown } from "react-icons/fi";
 
+import {
+  sectionFade,
+  listContainer,
+  listItem,
+  accordionTransition,
+  getChevronAnimation,
+  chevronTransition,
+  faqHover,
+} from "@/lib/animations/Animations";
+
 type FAQItem = {
   question: string;
   answer: string;
@@ -49,7 +59,11 @@ const FAQItemComponent = ({
   };
 
   return (
-    <div className="w-full border border-gray-200 bg-white shadow-[0_4px_4px_0_rgba(77,0,17,0.30)]">
+    <motion.div
+      variants={listItem}
+      {...faqHover}
+      className="w-full border border-gray-200 bg-white shadow-[0_4px_4px_0_rgba(77,0,17,0.30)]"
+    >
       <button
         id={buttonId}
         aria-expanded={isOpen}
@@ -58,15 +72,13 @@ const FAQItemComponent = ({
         onKeyDown={handleKeyDown}
         className="w-full flex items-center justify-between gap-3 px-5 md:px-6 py-4 md:py-5 text-left focus:outline-none rounded-xl"
       >
-        <div className="flex items-center gap-3 sm:gap-4">
-          <p className="text-[#4A0D0D] font-medium text-lg sm:text-xl md:text-2xl leading-snug">
-            {item.question}
-          </p>
-        </div>
+        <p className="text-[#4A0D0D] font-medium text-lg sm:text-xl md:text-2xl leading-snug">
+          {item.question}
+        </p>
 
         <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.25 }}
+          animate={getChevronAnimation(isOpen)}
+          transition={chevronTransition}
         >
           <FiChevronDown size={28} className="text-black" />
         </motion.div>
@@ -82,7 +94,7 @@ const FAQItemComponent = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={accordionTransition}
             className="overflow-hidden"
           >
             <div className="px-4 sm:px-5 pb-4 text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -91,7 +103,7 @@ const FAQItemComponent = ({
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
@@ -107,11 +119,23 @@ const FAQSection = () => {
   return (
     <section id="faqs" className="w-full bg-[#F9FAFB] scroll-mt-10">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-20 md:py-28">
-        <h2 className="text-center text-3xl sm:text-4xl lg:text-[40px] font-bold text-(--color-primary) mb-8 sm:mb-10">
+        <motion.h2
+          variants={sectionFade}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center text-3xl sm:text-4xl lg:text-[40px] font-bold text-(--color-primary) mb-8 sm:mb-10"
+        >
           FAQs
-        </h2>
+        </motion.h2>
 
-        <div className="flex flex-col gap-3 sm:gap-4">
+        <motion.div
+          variants={listContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col gap-3 sm:gap-4"
+        >
           {faqs.map((item, index) => (
             <FAQItemComponent
               key={index}
@@ -121,11 +145,17 @@ const FAQSection = () => {
               index={index}
             />
           ))}
-        </div>
+        </motion.div>
 
-        <p className="text-center text-[#4C4B4B] mt-8 sm:mt-10 text-sm sm:text-base md:text-lg">
+        <motion.p
+          variants={sectionFade}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center text-[#4C4B4B] mt-8 sm:mt-10 text-sm sm:text-base md:text-lg"
+        >
           Have any other questions? Please contact us.
-        </p>
+        </motion.p>
       </div>
     </section>
   );

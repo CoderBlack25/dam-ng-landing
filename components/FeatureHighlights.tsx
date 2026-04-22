@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { BsGrid } from "react-icons/bs";
 import {
   LuSparkles,
@@ -6,6 +9,14 @@ import {
   LuChartColumn,
 } from "react-icons/lu";
 import { CgFileDocument } from "react-icons/cg";
+
+import {
+  sectionFade,
+  cardContainer,
+  cardVariants,
+  cardHover,
+  featureIconHover,
+} from "@/lib/animations/Animations";
 
 const featuresData = [
   {
@@ -56,34 +67,52 @@ const FeatureHighlights = () => {
   return (
     <section className="bg-(--color-bg-cream) text-primary">
       <div className="max-w-7xl mx-auto py-20 md:py-28 px-6 sm:px-10 lg:px-14">
-        <div className="text-center mb-16">
+        <motion.div
+          variants={sectionFade}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl md:text-[40px] font-bold tracking-tight mb-4">
             Powerful Features
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-(--color-text-gray) max-w-2xl mx-auto">
             Everything you need to manage documents and workflows efficiently
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={cardContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {featuresData.map((feature) => (
-            <div
+            <motion.div
               key={feature.id}
+              variants={cardVariants}
+              {...cardHover}
               className="bg-white p-8 border border-(--color-border-light) shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded bg-[linear-gradient(to_bottom,var(--color-border-light),#FFFFFF)] border border-(--color-border-light-2) mb-6">
+              <motion.div
+                {...featureIconHover}
+                className="w-12 h-12 flex items-center justify-center rounded bg-[linear-gradient(to_bottom,var(--color-border-light),#FFFFFF)] border border-(--color-border-light-2) mb-6"
+              >
                 {feature.icon}
-              </div>
+              </motion.div>
 
               <h3 className="text-sm sm:text-base md:text-lg font-bold mb-3">
                 {feature.title}
               </h3>
+
               <p className="text-(--color-text-gray) leading-relaxed text-sm">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
